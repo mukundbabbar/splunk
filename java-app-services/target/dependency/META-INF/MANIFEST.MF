@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven 3.8.4
+Built-By: mbabbar
+Build-Jdk: 17.0.2
+Implementation-Title: java-app-services
+Implementation-Version: 2.0.1.RELEASE
+Implementation-Vendor-Id: org.springframework.boot
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/java-app-services
+Main-Class: org.springframework.boot.loader.JarLauncher
+Start-Class: com.mulabs.java.Application
+Spring-Boot-Version: 2.0.1.RELEASE
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+
