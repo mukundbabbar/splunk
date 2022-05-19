@@ -13,4 +13,4 @@ RUN chmod +x /startup.sh
 
 ADD target/java-app-services.jar java-app-services.jar
 
-ENTRYPOINT ["/bin/bash", "/startup.sh"]
+ENTRYPOINT ["/bin/bash", "/startup.sh"] 
