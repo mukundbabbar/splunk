@@ -17,22 +17,22 @@ public class WorldGeneratorController extends BaseController {
     }
 
 	@RequestMapping("/pgp")
-	public String purchaseGamePass() {
+	public String pgp() {
 		return "Hello from pgp";
 	}
 
 	@RequestMapping("/jg")
-	public String joinGame(HttpServletRequest request) {
+	public String jg(HttpServletRequest request) {
 		return "Hello from jg";
 	}
 
 	@RequestMapping("/ua")
-	public String updateAction(HttpServletRequest request) {
+	public String ua(HttpServletRequest request) {
 		return "Hello from ua";
 	}
 
 	@RequestMapping("/gw")
-	public String getWorld(HttpServletRequest request) {
+	public String gw(HttpServletRequest request) {
 		return "Hello from gw";
 	}
 
