@@ -21,7 +21,7 @@ public class AcctMgmtController extends BaseController {
 		return "Hello from login";
 	}
 
-	@RequestMapping("/gpg")
+	@RequestMapping("/pgp")
 	public String pgp(HttpServletRequest request) {
 		makeWebRequest("billing-services", "8080", "BillingServices/pgp", request);
 		makeWebRequest("credit-service", "8080", "CreditService/pgp", request);
