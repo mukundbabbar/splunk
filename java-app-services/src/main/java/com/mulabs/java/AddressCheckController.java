@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/AddressCheck")
-public class WorldGeneratorController extends BaseController {
+public class AddressCheckController extends BaseController {
 
     @RequestMapping(value = {"","/"})
     public String home() {
