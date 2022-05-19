@@ -8,7 +8,7 @@ COPY startup.sh /startup.sh
 
 RUN chmod +x /startup.sh
 
-#RUN chmod +w /etc/resolv.conf
+#RUN chmod +w /etc/resolv.conf 
 
 
 ADD target/java-app-services.jar java-app-services.jar
