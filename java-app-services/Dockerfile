@@ -11,6 +11,6 @@ RUN chmod +x /startup.sh
 #RUN chmod +w /etc/resolv.conf
 
 
-ADD java-app-services.jar java-app-services.jar
+ADD target/java-app-services.jar java-app-services.jar
 
 ENTRYPOINT ["/bin/bash", "/startup.sh"]

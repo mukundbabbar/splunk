@@ -8,32 +8,34 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/WebFrontEnd")
-public class WebFrontEndController extends BaseController {
+@RequestMapping("/LoginService")
+public class LoginServiceController extends BaseController {
 
     @RequestMapping(value = {"","/"})
     public String home() {
-        return "Hello from WebFrontEnd:home()";
+        return "Hello from LoginService:home()";
     }
-
-	@RequestMapping("/login")
-	public String login(HttpServletRequest request) {
-		makeWebRequest("auth-services", "8080", "AuthServices/login", request);
-		makeWebRequest("acct-mgmt", "8080", "AcctMgmt/login", request);
-		return "Hello from login";
-	}
 
 	@RequestMapping("/pgp")
 	public String pgp(HttpServletRequest request) {
-		makeWebRequest("acct-mgmt", "8080", "AcctMgmt/pgp", request);
-		return "Hello from purchaseGamePass";
+		return "Hello from pgp";
 	}
 
 	@RequestMapping("/jg")
 	public String jg(HttpServletRequest request) {
-		makeWebRequest("acct-mgmt", "8080", "AcctMgmt/jg", request);
 		return "Hello from jg";
 	}
 
+	@RequestMapping("/ua")
+	public String ua(HttpServletRequest request) {
+		makeWebRequest("credit-service", "8080", "CreditService/ua", request);
+		return "Hello from ua";
+	}
+
+	@RequestMapping("/gw")
+	public String gw(HttpServletRequest request) {
+		makeWebRequest("credit-service", "8080", "CreditService/gw", request);
+		return "Hello from gw";
+	}
 
 }

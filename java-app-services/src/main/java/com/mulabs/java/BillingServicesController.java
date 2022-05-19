@@ -15,9 +15,9 @@ public class BillingServicesController extends BaseController {
         return "Hello from BillingServices:home()";
     }
 
-	@RequestMapping("/purchaseGamePass")
-	public String purchaseGamePass() {
-		return "Hello from purchaseGamePass";
+	@RequestMapping("/pgp")
+	public String pgp() {
+		return "Hello from pgp";
 	}
 
 

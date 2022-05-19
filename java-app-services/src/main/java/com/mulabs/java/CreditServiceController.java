@@ -8,34 +8,35 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/WorldChangeServices")
-public class WorldChangeServicesController extends BaseController {
+@RequestMapping("/CreditService")
+public class CreditServiceController extends BaseController {
 
     @RequestMapping(value = {"","/"})
     public String home() {
-        return "Hello from WorldChangeServices:home()";
+        return "Hello from CreditService:home()";
     }
 
-	@RequestMapping("/purchaseGamePass")
+	@RequestMapping("/pgp")
 	public String purchaseGamePass(HttpServletRequest request) {
-		return "Hello from purchaseGamePass";
+		makeWebRequest("address-check", "8080", "AddressCheck/pgp", request);
+		return "Hello from pgp";
 	}
 
-	@RequestMapping("/joinGame")
+	@RequestMapping("/jg")
 	public String joinGame(HttpServletRequest request) {
-		return "Hello from joinGame";
+		makeWebRequest("address-check", "8080", "AddressCheck/jg", request);
+		return "Hello from jg";
 	}
 
-	@RequestMapping("/updateAction")
+	@RequestMapping("/ua")
 	public String updateAction(HttpServletRequest request) {
-		makeWebRequest("world-portal", "8080", "WorldPortal/updateAction", request);
-		return "Hello from updateAction";
+		makeWebRequest("address-check", "8080", "AddressCheck/ua", request);
+		return "Hello from ua";
 	}
 
-	@RequestMapping("/getWorld")
+	@RequestMapping("/gw")
 	public String getWorld(HttpServletRequest request) {
-		makeWebRequest("world-portal", "8080", "WorldPortal/getWorld", request);
-		return "Hello from getWorld";
+		makeWebRequest("address-check", "8080", "AddressCheck/gw", request);
+		return "Hello from gw";
 	}
-
 }

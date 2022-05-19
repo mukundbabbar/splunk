@@ -8,32 +8,32 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/WorldGenerator")
+@RequestMapping("/AddressCheck")
 public class WorldGeneratorController extends BaseController {
 
     @RequestMapping(value = {"","/"})
     public String home() {
-        return "Hello from WorldGenerator:home()";
+        return "Hello from AddressCheck:home()";
     }
 
-	@RequestMapping("/purchaseGamePass")
+	@RequestMapping("/pgp")
 	public String purchaseGamePass() {
-		return "Hello from purchaseGamePass";
+		return "Hello from pgp";
 	}
 
-	@RequestMapping("/joinGame")
+	@RequestMapping("/jg")
 	public String joinGame(HttpServletRequest request) {
-		return "Hello from joinGame";
+		return "Hello from jg";
 	}
 
-	@RequestMapping("/updateAction")
+	@RequestMapping("/ua")
 	public String updateAction(HttpServletRequest request) {
-		return "Hello from updateAction";
+		return "Hello from ua";
 	}
 
-	@RequestMapping("/getWorld")
+	@RequestMapping("/gw")
 	public String getWorld(HttpServletRequest request) {
-		return "Hello from getWorld";
+		return "Hello from gw";
 	}
 
 

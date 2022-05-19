@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/WebAPI")
-public class WebAPIController extends BaseController {
+@RequestMapping("/AcctMgmt")
+public class AcctMgmtController extends BaseController {
 
     @RequestMapping(value = {"","/"})
     public String home() {
@@ -21,17 +21,17 @@ public class WebAPIController extends BaseController {
 		return "Hello from login";
 	}
 
-	@RequestMapping("/purchaseGamePass")
-	public String purchaseGamePass(HttpServletRequest request) {
-		makeWebRequest("billing-services", "8080", "BillingServices/purchaseGamePass", request);
-		makeWebRequest("world-portal", "8080", "WorldPortal/purchaseGamePass", request);
+	@RequestMapping("/gpg")
+	public String pgp(HttpServletRequest request) {
+		makeWebRequest("billing-services", "8080", "BillingServices/pgp", request);
+		makeWebRequest("credit-service", "8080", "CreditService/pgp", request);
 		return "Hello from purchaseGamePass";
 	}
 
-	@RequestMapping("/joinGame")
-	public String joinGame(HttpServletRequest request) {
-		makeWebRequest("world-portal", "8080", "WorldPortal/joinGame", request);
-		return "Hello from joinGame";
+	@RequestMapping("/jg")
+	public String jg(HttpServletRequest request) {
+		makeWebRequest("credit-service", "8080", "CreditService/jg", request);
+		return "Hello from jg";
 	}
 
 
