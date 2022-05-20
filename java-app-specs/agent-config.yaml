@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: agent-config
+data:
+  OTEL_RESOURCE_ATTRIBUTES: "deployment.environment=mb-dev"
+  JAVA_OPTS: "-javaagent:/tmp/agent/splunk-otel-javaagent.jar"

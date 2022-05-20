@@ -19,7 +19,35 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 8080
-      restartPolicy: Always
+          envFrom:
+          - configMapRef:
+              name: otel-config
+          env:
+            - name: SPLUNK_OTEL_AGENT
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: OTEL_SERVICE_NAME
+              value: auth-services
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://$(SPLUNK_OTEL_AGENT):4317"
+          envFrom:
+          - configMapRef:
+              name: agent-config
+          volumeMounts:
+          - mountPath: /tmp/agent/
+            name: splunk-otel-java
+      initContainers:
+      - name: splunk-otel-init
+        image: busybox:1.28
+        command: ["/bin/sh","-c"]
+        args: ["wget https://github.com/signalfx/splunk-otel-java/releases/latest/download/splunk-otel-javaagent.jar -O /tmp/splunk-otel-javaagent.jar"]
+        volumeMounts:
+        - mountPath: /tmp
+          name: splunk-otel-java
+      volumes:
+      - emptyDir: {}
+        name: splunk-otel-java
 
 ---
 apiVersion: v1
