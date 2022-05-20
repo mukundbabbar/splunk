@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: acct-mgmt
+spec:
+  selector:
+    matchLabels:
+      name: acct-mgmt
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: acct-mgmt
+    spec:
+      serviceAccountName: olly-sa
+      containers:
+        - name: acct-mgmt
+          image: mukundbabbar/java-app-services:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 8080
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: acct-mgmt
+spec:
+  selector:
+    name: acct-mgmt
+  ports:
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+status:
+  loadBalancer: {}
