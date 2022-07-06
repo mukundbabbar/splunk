@@ -13,7 +13,8 @@ Requirements
 
 ## Step 0 - 
 
-Download java-app-specs directory
+Download java-app-specs directory - https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fmukundbabbar%2Fsplunk%2Ftree%2Fmain%2Fjava-app-specs
+
 Lets start from java-app-specs directory
 
 ```
