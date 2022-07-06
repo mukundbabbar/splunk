@@ -1,8 +1,8 @@
 # Instrumenting applications on kubernetes using init containers
 
-This workshop will focus on how we can instrument application by injecting the java agent into the applicaiton container using init containers and keeping the app code and agent independent of each other. We will be using un-instrumented application and then injecing the java agent without changing the application code. Same logic can be applied to other instrumentations - Nodejs, Python or .NET
+This workshop will focus on how we can instrument application by injecting the java agent into the applicaiton container using init containers and keeping the app code and agent independent of each other. We will be using un-instrumented application (included) and then injecing the java agent without changing the application code. Same logic can be applied to other instrumentations - Nodejs, Python or .NET
 
-Init container is used to download the splunk java agent and using it in the main container using volume mount. Configuration of JAVA_OPTS exist in the configmap or could even be in the applications Docker file.
+Init container is used to download the splunk java agent and using it in the main container using volume mount. Configuration of JAVA_OPTS exist in the configmap.
 
 ![K8s instrument Java (2)](https://user-images.githubusercontent.com/5012739/177473597-584bdd37-d8fb-4d40-a618-a0bbdebdfe35.jpeg)
 
