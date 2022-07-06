@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: load-generator
+spec:
+  schedule: "*/2 * * * *"
+  concurrencyPolicy: Allow
+  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: load-generator
+            image: curlimages/curl:7.72.0
+            command: ["/bin/sh"]
+            args:
+              - -c
+              - >-
+                  curl http://web-frontend:8080 &&
+                  curl http://web-frontend:8080/WebFrontEnd &&
+                  curl http://web-frontend:8080/WebFrontEnd/pgp &&
+                  curl http://web-frontend:8080/WebFrontEnd/jg &&
+                  curl http://loan-api:8080/LoanAPI/ua &&
+                  curl http://loan-api:8080/LoanAPI/ua 
+                  curl http://loan-api:8080/LoanAPI/c &&
+                  curl http://loan-api:8080/LoanAPI/gw
+          restartPolicy: OnFailure
