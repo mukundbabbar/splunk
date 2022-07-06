@@ -63,6 +63,8 @@ kubectl logs -l app=splunk-otel-collector -f --container otel-collector
 
 Check Splunk Observability Cloud K8s navigator  
 
+<img width="751" alt="Screen Shot 2022-07-06 at 2 31 17 pm" src="https://user-images.githubusercontent.com/5012739/177468982-b06a16f9-a54c-418e-9aa7-661a00063dec.png">
+
 ## Step 3 - Instrument services with Splunk otel java agent
 
 ```
@@ -87,7 +89,9 @@ curl localhost:51474/LoanAPI/c
 curl localhost:51474/LoanAPI/gw
 ```
 
-Check Splunk Observability Cloud APM  
+Check Splunk Observability Cloud APM. There will be around 4-8 services depending on the load
+
+<img width="636" alt="Screen Shot 2022-07-06 at 2 34 10 pm" src="https://user-images.githubusercontent.com/5012739/177469011-059b935b-a186-424b-baf6-d476625a754f.png">
 
 ## Clean Env
 
