@@ -77,9 +77,9 @@ kubectl -n apps apply -f appspecs-instr
 
 Difference between appspecs and appspecs-instr is that latter has updated specs with init containers.
 
-## Step 4 - Generate load (I'll be adding a new service to generate load but for now, its manual :) ) 
+## Step 4 - Generate load 
 
-Following uses CronJob to trigger curl commands 
+Using CronJob to run curl commands every 3 minutes
 
 ```
 kubectl -n apps apply -f load-gen.yaml
