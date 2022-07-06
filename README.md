@@ -75,7 +75,7 @@ kubectl create -f agent-config.yaml -n apps
 kubectl -n apps apply -f appspecs-instr
 ```
 
-Difference between appspecs and appspecs-instr is that latter has updated specs with init containers.
+Difference between appspecs and appspecs-instr is that latter has updated specs with init containers. Once updated configuration is applied, the pods will restart with the agent. 
 
 ## Step 4 - Generate load 
 
