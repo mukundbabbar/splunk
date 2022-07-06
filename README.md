@@ -4,7 +4,7 @@ This workshop will focus on how we can instrument application by injecting the j
 
 Init container is used to download the splunk java agent and using it in the main container using volume mount. Configuration of JAVA_OPTS exist in the configmap or could even be in the applications Docker file.
 
-![K8s instrument Java](https://user-images.githubusercontent.com/5012739/177461944-80920416-7df0-409d-b799-94e82bc8015a.jpeg)
+![K8s instrument Java (1)](https://user-images.githubusercontent.com/5012739/177473319-a6be6e06-3913-449a-9745-36649b4bf5be.jpeg)
 
 Requirements
 - Kubectl and access to any K8s variant
