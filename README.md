@@ -74,10 +74,9 @@ Difference between appspecs and appspecs-instr is that latter has updated specs 
 
 ## Step 4 - Load into the application (I'll be adding a new service to generate load but for now, its manual :) ) 
 
-Identify the mapped port to WebFrontEnd and LoanAPI service to generate manual load.
+Identify the mapped or service port to WebFrontEnd and LoanAPI service to generate manual load.
 
 ```
-kubectl -n apps exec -it <podId> -- /bin/bash
 curl localhost:51750
 curl localhost:51750/WebFrontEnd
 curl localhost:51750/WebFrontEnd/pgp
