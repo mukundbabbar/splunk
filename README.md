@@ -87,7 +87,7 @@ kubectl -n apps apply -f load-gen.yaml
 
 Check Splunk Observability Cloud APM. There will be around 4-8 services depending on the load
 
-<img width="636" alt="Screen Shot 2022-07-06 at 2 34 10 pm" src="https://user-images.githubusercontent.com/5012739/177469011-059b935b-a186-424b-baf6-d476625a754f.png">
+<img width="842" alt="Screen Shot 2022-07-06 at 10 07 19 pm" src="https://user-images.githubusercontent.com/5012739/177546499-dca056d8-dad8-4141-82b8-42b80dc274ee.png">
 
 ## Clean Env
 
