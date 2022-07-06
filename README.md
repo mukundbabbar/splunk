@@ -64,7 +64,7 @@ kubectl get pods
 kubectl logs -l app=splunk-otel-collector -f --container otel-collector
 ```
 
-Check Splunk Observability Cloud K8s navigator  
+Validate Splunk Observability Cloud K8s navigator  
 
 <img width="751" alt="Screen Shot 2022-07-06 at 2 31 17 pm" src="https://user-images.githubusercontent.com/5012739/177468982-b06a16f9-a54c-418e-9aa7-661a00063dec.png">
 
@@ -85,7 +85,7 @@ Using CronJob to run curl commands every 3 minutes
 kubectl -n apps apply -f load-gen.yaml
 ```
 
-Check Splunk Observability Cloud APM. There will be around 4-8 services depending on the load
+Validate Splunk Observability Cloud APM UI. There will be a number of services as shown below
 
 <img width="842" alt="Screen Shot 2022-07-06 at 10 07 19 pm" src="https://user-images.githubusercontent.com/5012739/177546499-dca056d8-dad8-4141-82b8-42b80dc274ee.png">
 
