@@ -13,6 +13,7 @@ Requirements
 
 ## Step 0 - 
 
+Download java-app-specs directory
 Lets start from java-app-specs directory
 
 ```
