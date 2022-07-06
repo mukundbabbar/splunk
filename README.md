@@ -79,17 +79,10 @@ Difference between appspecs and appspecs-instr is that latter has updated specs 
 
 ## Step 4 - Generate load (I'll be adding a new service to generate load but for now, its manual :) ) 
 
-Identify the mapped or service port to WebFrontEnd and LoanAPI service to generate manual load.
+Following uses CronJob to trigger curl commands 
 
 ```
-curl localhost:51750
-curl localhost:51750/WebFrontEnd
-curl localhost:51750/WebFrontEnd/pgp
-curl localhost:51750/WebFrontEnd/jg
-curl localhost:51474/LoanAPI
-curl localhost:51474/LoanAPI/ua
-curl localhost:51474/LoanAPI/c
-curl localhost:51474/LoanAPI/gw
+kubectl -n apps apply -f load-gen.yaml
 ```
 
 Check Splunk Observability Cloud APM. There will be around 4-8 services depending on the load
