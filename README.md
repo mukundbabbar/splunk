@@ -77,7 +77,7 @@ kubectl -n apps apply -f appspecs-instr
 
 Difference between appspecs and appspecs-instr is that latter has updated specs with init containers.
 
-## Step 4 - Load into the application (I'll be adding a new service to generate load but for now, its manual :) ) 
+## Step 4 - Generate load (I'll be adding a new service to generate load but for now, its manual :) ) 
 
 Identify the mapped or service port to WebFrontEnd and LoanAPI service to generate manual load.
 
