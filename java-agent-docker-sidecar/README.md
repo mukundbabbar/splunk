@@ -52,7 +52,19 @@ docker compose up
 
 ### Option 2 - Using startup script
 
-TODO
+- Create a shared volume and mount it to /shared/. 
+- Modify sidecar Dockerfile - add following at end of file -> 
+```
+     RUN mv /tmp/agent/splunk-otel-javaagent.jar /shared/
+```
+- Modify application startup.sh - add following before application startup command -> 
+```
+     cp /shared/splunk-otel-javaagent.jar /tmp/agent/
+```
+
+Note - If using web config files instead of direct java command, config files can also be copied from sidecar to the relavent directory on the application container - web config files will have JAVA_OPTS configured with -javaagent pointing to /tmp/agent directory.
+
+Start both containers 
 
 ## Step 3 - Generate Load
 
