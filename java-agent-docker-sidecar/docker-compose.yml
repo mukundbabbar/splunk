@@ -1,0 +1,21 @@
+version: '1'
+services:
+  splunk-otel-java-repo:
+    image: splunk-otel-java-repo:latest
+    container_name: splunk-otel-java-repo
+    volumes:
+    - /tmp
+
+  java-app:
+    image: mukundbabbar/java-app-services:1.0
+    container_name: web-frontend
+    volumes_from:
+      - splunk-otel-java-repo:ro
+    ports:
+      - "8080:8080"
+    environment:
+      - JAVA_OPTS=-javaagent:/tmp/agent/splunk-otel-javaagent.jar
+      - OTEL_RESOURCE_ATTRIBUTES=deployment.environment=mb-dev
+      - OTEL_SERVICE_NAME=sample-service
+      - OTEL_EXPORTER_OTLP_ENDPOINT=https://ingest.us1.signalfx.com
+      - SPLUNK_ACCESS_TOKEN=Nxr2TVWwK2ut_C-o32AF4Q
