@@ -1,8 +1,6 @@
 
 # Instrumenting java apps using sidecar to docker containers
 
-## Pending tests
-
 This workshop instruments java applications without changing the application image by injecting the java agent through sidecar container. Same logic can be applied to other instrumentations - Nodejs, Python or .NET. This will help keep both the agent and app independent eg. dev teams do not have to rebuild the app image if they have to upgrade agent version.
 
 
@@ -41,7 +39,7 @@ We will be using java-app-services image which is not instrumented and uses JAVA
 - OR use startup script in the app to copy the file to local container
 - OR use catalina.sh or wrapper.conf or webenv.sh file to access shared volume
 
-### docker compose example
+### Option 1 - docker compose example
 
 Update docker-compose.yml file with REALM and ACCESS_KEY
 
@@ -51,6 +49,10 @@ Start the app
 cd java-agent-docker-sidecar 
 docker compose up
 ```
+
+### Option 2 - Using startup script
+
+TODO
 
 ## Step 3 - Generate Load
 
@@ -63,7 +65,7 @@ docker exec web-frontend curl localhost:8080/WebFrontEnd
 
 The app should be started with the agent. Check Splunk Observability Cloud service view to confirm 
 
-
+<img width="696" alt="Screen Shot 2022-07-21 at 2 19 53 am" src="https://user-images.githubusercontent.com/5012739/180033106-7d315650-df73-48a4-9121-49aa9031d2e8.png">
 
 
 
