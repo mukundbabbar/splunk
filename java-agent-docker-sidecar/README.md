@@ -57,7 +57,8 @@ docker compose up
 Run following command to generate load
 
 ```
-curl localhost:8080
+docker exec web-frontend curl localhost:8080
+docker exec web-frontend curl localhost:8080/WebFrontEnd
 ```
 
 The app should be started with the agent. Check Splunk Observability Cloud service view to confirm 
