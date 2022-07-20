@@ -1,8 +1,8 @@
 # Instrumenting applications on kubernetes using init containers
 
-This workshop will focus on how we can instrument application by injecting the java agent into the applicaiton container using init containers and keeping the app code and agent independent of each other. We will be using un-instrumented application and then injecing the java agent without changing the application code. Same logic can be applied to other instrumentations - Nodejs, Python or .NET
+This workshop will focus on how we can instrument application by injecting the java agent into the applicaiton container using init containers and keeping the app code and agent independent of each other. We will be using un-instrumented application (included) and then injecing the java agent without changing the application code. Same logic can be applied to other instrumentations - Nodejs, Python or .NET
 
-Init container is used to download the splunk java agent and using it in the main container using volume mount. Configuration of JAVA_OPTS exist in the configmap or could even be in the applications Docker file.
+Init container is used to download the splunk java agent and using it in the main container using volume mount. Other way is to upload agent docker image and then copying the binary to tmp volume which can then be used by the app. Configuration of JAVA_OPTS exist in the configmap.
 
 ![K8s instrument Java (2)](https://user-images.githubusercontent.com/5012739/177473597-584bdd37-d8fb-4d40-a618-a0bbdebdfe35.jpeg)
 
@@ -64,7 +64,7 @@ kubectl get pods
 kubectl logs -l app=splunk-otel-collector -f --container otel-collector
 ```
 
-Check Splunk Observability Cloud K8s navigator  
+Validate Splunk Observability Cloud K8s navigator  
 
 <img width="751" alt="Screen Shot 2022-07-06 at 2 31 17 pm" src="https://user-images.githubusercontent.com/5012739/177468982-b06a16f9-a54c-418e-9aa7-661a00063dec.png">
 
@@ -75,26 +75,19 @@ kubectl create -f agent-config.yaml -n apps
 kubectl -n apps apply -f appspecs-instr
 ```
 
-Difference between appspecs and appspecs-instr is that latter has updated specs with init containers.
+Difference between appspecs and appspecs-instr is that latter has updated specs with init containers. Once updated configuration is applied, the pods will restart with the agent. 
 
-## Step 4 - Generate load (I'll be adding a new service to generate load but for now, its manual :) ) 
+## Step 4 - Generate load 
 
-Identify the mapped or service port to WebFrontEnd and LoanAPI service to generate manual load.
+Using CronJob to run curl commands every 3 minutes
 
 ```
-curl localhost:51750
-curl localhost:51750/WebFrontEnd
-curl localhost:51750/WebFrontEnd/pgp
-curl localhost:51750/WebFrontEnd/jg
-curl localhost:51474/LoanAPI
-curl localhost:51474/LoanAPI/ua
-curl localhost:51474/LoanAPI/c
-curl localhost:51474/LoanAPI/gw
+kubectl -n apps apply -f load-gen.yaml
 ```
 
-Check Splunk Observability Cloud APM. There will be around 4-8 services depending on the load
+Validate Splunk Observability Cloud APM UI. There will be a number of services as shown below
 
-<img width="636" alt="Screen Shot 2022-07-06 at 2 34 10 pm" src="https://user-images.githubusercontent.com/5012739/177469011-059b935b-a186-424b-baf6-d476625a754f.png">
+<img width="842" alt="Screen Shot 2022-07-06 at 10 07 19 pm" src="https://user-images.githubusercontent.com/5012739/177546499-dca056d8-dad8-4141-82b8-42b80dc274ee.png">
 
 ## Clean Env
 
