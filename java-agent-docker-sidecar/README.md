@@ -1,5 +1,5 @@
 
-# Instrumenting java apps using sidecar to docker containers
+# Instrumenting java apps using sidecar
 
 This workshop instruments java applications without changing the application image by injecting the java agent through sidecar container. Same logic can be applied to other instrumentations - Nodejs, Python or .NET. This will help keep both the agent and app independent eg. dev teams do not have to rebuild the app image if they have to upgrade agent version.
 
