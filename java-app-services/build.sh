@@ -4,4 +4,4 @@ mvn clean package -DskipTests=true
 
 cp ./target/java-app-services.jar ./docker/java-app-services.jar
 
-docker build -t java-app-services -f docker/Dockerfile ./docker
+docker build -t java-app-services -f Dockerfile .
