@@ -5,7 +5,7 @@ This workshop instruments java applications without changing the application ima
 
 
 Requirements
-- Docker (Logic can be applied on ECS as well (configuration not included in this workshop))
+- Docker (Logic can be applied on ECS as well (ECS configuration will be added later))
 - Splunk Observability Cloud access and values for $REALM and $ACCESS_TOKEN
 
 ## Step 0 - Prep
