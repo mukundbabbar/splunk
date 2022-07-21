@@ -6,7 +6,7 @@ This workshop instruments java applications without changing the application ima
 ![Docker-Sidecar instrument Java](https://user-images.githubusercontent.com/5012739/180111740-fac2751a-82e8-486b-8beb-780592095bc5.jpeg)
 
 Requirements
-- Docker (Logic can be applied on ECS as well (ECS configuration will be added later))
+- Docker (Logic can be applied on ECS as well (with shared volume configured and mounted))
 - Splunk Observability Cloud access and values for $REALM and $ACCESS_TOKEN
 
 ## Step 0 - Prep
