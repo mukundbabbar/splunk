@@ -53,7 +53,7 @@ docker compose up
 ### Option 2 - Using startup script
 
 - Create a shared volume and mount it to /shared/. 
-- Modify sidecar Dockerfile - add following at end of file -> 
+- Assuming shared volume is mounted at '/shared/' Modify sidecar Dockerfile - add following at end of file -> 
 ```
      RUN mv /tmp/agent/splunk-otel-javaagent.jar /shared/
 ```
