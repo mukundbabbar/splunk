@@ -62,6 +62,7 @@ docker compose up
 ```
      cp /shared/splunk-otel-javaagent.jar /tmp/agent/
 ```
+- Set environment variables for the app on ECS or in app docker/startup file (the ones which are set in docker-compose.yml file)
 
 Note - If using web config files eg. webenv.sh instead of direct java command, config files can also be copied from sidecar to the relavent directory on the application container - web config files will have JAVA_OPTS configured with -javaagent pointing to /tmp/agent directory.
 
