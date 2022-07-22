@@ -3,7 +3,7 @@
 
 This workshop instruments java applications without changing the application image by injecting the java agent through sidecar container. Same logic can be applied to other instrumentations - Nodejs, Python or .NET. This will help keep both the agent and app independent eg. dev teams do not have to rebuild the app image if they have to upgrade agent version.
 
-![Docker-Sidecar instrument Java](https://user-images.githubusercontent.com/5012739/180111740-fac2751a-82e8-486b-8beb-780592095bc5.jpeg)
+![Docker-Sidecar instrument Java (1)](https://user-images.githubusercontent.com/5012739/180338934-1b7b26e1-82eb-43be-8ef1-2eca488fed7b.jpeg)
 
 Requirements
 - Docker (Logic can be applied on ECS as well (with shared volume configured and mounted))
