@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-frontend
+spec:
+  selector:
+    matchLabels:
+      name: web-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: web-frontend
+      annotations:
+        otel.splunk.com/inject-java: "true"
+    spec:
+      serviceAccountName: olly-sa
+      containers:
+        - name: web-frontend
+          image: mukundbabbar/java-app-services:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 8080
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-frontend
+spec:
+  selector:
+    name: web-frontend
+  ports:
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+status:
+  loadBalancer: {}

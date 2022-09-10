@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-services
+spec:
+  selector:
+    matchLabels:
+      name: auth-services
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: auth-services
+      annotations:
+        otel.splunk.com/inject-java: "true"
+    spec:
+      serviceAccountName: olly-sa
+      containers:
+        - name: auth-services
+          image: mukundbabbar/java-app-services:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 8080
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-services
+spec:
+  selector:
+    name: auth-services
+  ports:
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+status:
+  loadBalancer: {}

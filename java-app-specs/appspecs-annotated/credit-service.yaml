@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: credit-service
+spec:
+  selector:
+    matchLabels:
+      name: credit-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: credit-service
+      annotations:
+        otel.splunk.com/inject-java: "true"
+    spec:
+      serviceAccountName: olly-sa
+      containers:
+        - name: credit-service
+          image: mukundbabbar/java-app-services:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 8080
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: credit-service
+spec:
+  selector:
+    name: credit-service
+  ports:
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+status:
+  loadBalancer: {}
