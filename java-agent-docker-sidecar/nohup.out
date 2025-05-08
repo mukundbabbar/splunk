@@ -1,0 +1,84 @@
+java-app Pulling 
+java-app Error 
+Error response from daemon: pull access denied for java-app-services, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+Network java-agent-docker-sidecar_default  Creating
+Network java-agent-docker-sidecar_default  Created
+Container splunk-otel-java-repo  Creating
+Container splunk-otel-java-repo  Created
+Container web-frontend  Creating
+Container web-frontend  Created
+Attaching to splunk-otel-java-repo, web-frontend
+splunk-otel-java-repo exited with code 0
+web-frontend           | OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+web-frontend           | [otel.javaagent 2022-07-20 16:08:42:734 +0000] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: splunk-1.13.1-otel-1.15.0
+web-frontend           | 
+web-frontend           |   .   ____          _            __ _ _
+web-frontend           |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+web-frontend           | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+web-frontend           |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+web-frontend           |   '  |____| .__|_| |_|_| |_\__, | / / / /
+web-frontend           |  =========|_|==============|___/=/_/_/_/
+web-frontend           |  :: Spring Boot ::        (v2.0.1.RELEASE)
+web-frontend           | 
+web-frontend           | 2022-07-20 16:08:53.524  INFO 1 --- [           main] com.mulabs.java.Application              : Starting Application v2.0.1.RELEASE on 2755ab330d99 with PID 1 (/java-app-services.jar started by root in /)
+web-frontend           | 2022-07-20 16:08:53.556  INFO 1 --- [           main] com.mulabs.java.Application              : No active profile set, falling back to default profiles: default
+web-frontend           | 2022-07-20 16:08:53.882  INFO 1 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@17aa8a11: startup date [Wed Jul 20 16:08:53 UTC 2022]; root of context hierarchy
+web-frontend           | 2022-07-20 16:08:59.839  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+web-frontend           | 2022-07-20 16:08:59.995  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+web-frontend           | 2022-07-20 16:08:59.999  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+web-frontend           | 2022-07-20 16:09:00.099  INFO 1 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+web-frontend           | 2022-07-20 16:09:00.461  INFO 1 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+web-frontend           | 2022-07-20 16:09:00.461  INFO 1 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6585 ms
+web-frontend           | 2022-07-20 16:09:00.920  INFO 1 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+web-frontend           | 2022-07-20 16:09:00.943  INFO 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+web-frontend           | 2022-07-20 16:09:00.944  INFO 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'otelAutoDispatcherFilter' to: [/*]
+web-frontend           | 2022-07-20 16:09:00.950  INFO 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+web-frontend           | 2022-07-20 16:09:00.951  INFO 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+web-frontend           | 2022-07-20 16:09:00.952  INFO 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+web-frontend           | 2022-07-20 16:09:01.367  INFO 1 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+web-frontend           | 2022-07-20 16:09:01.943  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@17aa8a11: startup date [Wed Jul 20 16:08:53 UTC 2022]; root of context hierarchy
+web-frontend           | 2022-07-20 16:09:02.230  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[ || /]}" onto public java.lang.String com.mulabs.java.Application.home()
+web-frontend           | 2022-07-20 16:09:02.241  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/BillingServices || /BillingServices/]}" onto public java.lang.String com.mulabs.java.BillingServicesController.home()
+web-frontend           | 2022-07-20 16:09:02.246  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/BillingServices/pgp]}" onto public java.lang.String com.mulabs.java.BillingServicesController.pgp()
+web-frontend           | 2022-07-20 16:09:02.251  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AddressCheck/jg]}" onto public java.lang.String com.mulabs.java.AddressCheckController.jg(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.252  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AddressCheck/gw]}" onto public java.lang.String com.mulabs.java.AddressCheckController.gw(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.259  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AddressCheck || /AddressCheck/]}" onto public java.lang.String com.mulabs.java.AddressCheckController.home()
+web-frontend           | 2022-07-20 16:09:02.259  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AddressCheck/pgp]}" onto public java.lang.String com.mulabs.java.AddressCheckController.pgp()
+web-frontend           | 2022-07-20 16:09:02.260  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AddressCheck/ua]}" onto public java.lang.String com.mulabs.java.AddressCheckController.ua(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.269  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/LoginService/jg]}" onto public java.lang.String com.mulabs.java.LoginServiceController.jg(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.278  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/LoginService/gw]}" onto public java.lang.String com.mulabs.java.LoginServiceController.gw(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.279  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/LoginService || /LoginService/]}" onto public java.lang.String com.mulabs.java.LoginServiceController.home()
+web-frontend           | 2022-07-20 16:09:02.280  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/LoginService/pgp]}" onto public java.lang.String com.mulabs.java.LoginServiceController.pgp(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.281  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/LoginService/ua]}" onto public java.lang.String com.mulabs.java.LoginServiceController.ua(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.290  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/WebFrontEnd/jg]}" onto public java.lang.String com.mulabs.java.WebFrontEndController.jg(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.291  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/WebFrontEnd || /WebFrontEnd/]}" onto public java.lang.String com.mulabs.java.WebFrontEndController.home()
+web-frontend           | 2022-07-20 16:09:02.292  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/WebFrontEnd/pgp]}" onto public java.lang.String com.mulabs.java.WebFrontEndController.pgp(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.297  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/WebFrontEnd/login]}" onto public java.lang.String com.mulabs.java.WebFrontEndController.login(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.301  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/LoanAPI/gw]}" onto public java.lang.String com.mulabs.java.LoanAPIController.gw(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.302  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/LoanAPI || /LoanAPI/]}" onto public java.lang.String com.mulabs.java.LoanAPIController.home()
+web-frontend           | 2022-07-20 16:09:02.306  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/LoanAPI/ua]}" onto public java.lang.String com.mulabs.java.LoanAPIController.ua(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.309  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/LoanAPI/c]}" onto public java.lang.String com.mulabs.java.LoanAPIController.c(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.310  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AuthServices || /AuthServices/]}" onto public java.lang.String com.mulabs.java.AuthServicesController.home()
+web-frontend           | 2022-07-20 16:09:02.314  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AuthServices/login]}" onto public java.lang.String com.mulabs.java.AuthServicesController.login()
+web-frontend           | 2022-07-20 16:09:02.316  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AcctMgmt/jg]}" onto public java.lang.String com.mulabs.java.AcctMgmtController.jg(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.317  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AcctMgmt || /AcctMgmt/]}" onto public java.lang.String com.mulabs.java.AcctMgmtController.home()
+web-frontend           | 2022-07-20 16:09:02.318  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AcctMgmt/pgp]}" onto public java.lang.String com.mulabs.java.AcctMgmtController.pgp(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.319  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/AcctMgmt/login]}" onto public java.lang.String com.mulabs.java.AcctMgmtController.login()
+web-frontend           | 2022-07-20 16:09:02.324  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CreditService/jg]}" onto public java.lang.String com.mulabs.java.CreditServiceController.jg(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.326  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CreditService/gw]}" onto public java.lang.String com.mulabs.java.CreditServiceController.gw(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.330  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CreditService || /CreditService/]}" onto public java.lang.String com.mulabs.java.CreditServiceController.home()
+web-frontend           | 2022-07-20 16:09:02.330  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CreditService/pgp]}" onto public java.lang.String com.mulabs.java.CreditServiceController.pgp(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.331  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/CreditService/ua]}" onto public java.lang.String com.mulabs.java.CreditServiceController.ua(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.341  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+web-frontend           | 2022-07-20 16:09:02.343  INFO 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+web-frontend           | 2022-07-20 16:09:02.446  INFO 1 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+web-frontend           | 2022-07-20 16:09:02.450  INFO 1 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+web-frontend           | 2022-07-20 16:09:02.853  INFO 1 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+web-frontend           | 2022-07-20 16:09:03.065  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+web-frontend           | 2022-07-20 16:09:03.075  INFO 1 --- [           main] com.mulabs.java.Application              : Started Application in 12.122 seconds (JVM running for 20.659)
+web-frontend           | 2022-07-20 16:17:29.898  INFO 1 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+web-frontend           | 2022-07-20 16:17:29.899  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+web-frontend           | 2022-07-20 16:17:29.955  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 52 ms
+web-frontend           | 2022-07-20 16:25:41.304  INFO 1 --- [       Thread-4] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@17aa8a11: startup date [Wed Jul 20 16:08:53 UTC 2022]; root of context hierarchy
+web-frontend           | 2022-07-20 16:25:41.315  INFO 1 --- [       Thread-4] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+web-frontend exited with code 143
