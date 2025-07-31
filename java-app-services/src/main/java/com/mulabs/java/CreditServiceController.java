@@ -18,25 +18,30 @@ public class CreditServiceController extends BaseController {
 
 	@RequestMapping("/pgp")
 	public String pgp(HttpServletRequest request) {
-		makeWebRequest("address-check", "8080", "AddressCheck/pgp", request);
+		makeWebRequest(getTargetHost(), "8080", "AddressCheck/pgp", request);
 		return "Hello from pgp";
 	}
 
 	@RequestMapping("/jg")
 	public String jg(HttpServletRequest request) {
-		makeWebRequest("address-check", "8080", "AddressCheck/jg", request);
+		makeWebRequest(getTargetHost(), "8080", "AddressCheck/jg", request);
 		return "Hello from jg";
 	}
 
 	@RequestMapping("/ua")
 	public String ua(HttpServletRequest request) {
-		makeWebRequest("address-check", "8080", "AddressCheck/ua", request);
+		makeWebRequest(getTargetHost(), "8080", "AddressCheck/ua", request);
 		return "Hello from ua";
 	}
 
 	@RequestMapping("/gw")
 	public String gw(HttpServletRequest request) {
-		makeWebRequest("address-check", "8080", "AddressCheck/gw", request);
+		makeWebRequest(getTargetHost(), "8080", "AddressCheck/gw", request);
 		return "Hello from gw";
+	}
+	
+	private String getTargetHost() {
+	    String envHost = System.getenv("EXTERNAL_ADDRESS_CHECK_URL");
+	    return (envHost != null && !envHost.isEmpty()) ? envHost : "address-check";
 	}
 }
